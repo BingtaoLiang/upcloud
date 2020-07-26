@@ -37,8 +37,6 @@ public class indexController {
 
     @Autowired
     private ProfessionService professionService;
-    @Autowired
-    private ProVideoMapper proVideoMapper;
 
     @Data
     class UserInfo {
@@ -52,8 +50,8 @@ public class indexController {
                         @RequestParam(value = "page",defaultValue = "1") Integer page,
                         @RequestParam(value = "size",defaultValue = "9") Integer size) {
 
-        PaginationDTO videos = professionService.listProVideo(page, size);
-        model.addAttribute("videos",videos);
+//        PaginationDTO videos = professionService.listProVideo(page, size);
+//        model.addAttribute("videos",videos);
 
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
@@ -171,6 +169,7 @@ public class indexController {
             System.out.println(session.getId());
             System.out.println(token);
             return "redirect:/";
+//            return "redirect:/front/";
         } else {
             map.put("msg", "密码或账号错误！");
             return "login";

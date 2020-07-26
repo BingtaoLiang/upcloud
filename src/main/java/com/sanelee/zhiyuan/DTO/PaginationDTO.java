@@ -1,9 +1,6 @@
 package com.sanelee.zhiyuan.DTO;
 
-import com.sanelee.zhiyuan.Model.GaoKao;
-import com.sanelee.zhiyuan.Model.ProVideo;
-import com.sanelee.zhiyuan.Model.Profession;
-import com.sanelee.zhiyuan.Model.School;
+import com.sanelee.zhiyuan.Model.*;
 import lombok.Data;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -23,6 +20,7 @@ public class PaginationDTO {
     private List<Integer> pages = new ArrayList<>();
     private Integer totalPage;
     private List<ProVideo> proVideoList;
+    private List<GaoKaoQuestion> gaoKaoQuestionList;
 
     public void setPagination(Integer totalPage, Integer page) {
         this.totalPage = totalPage;
