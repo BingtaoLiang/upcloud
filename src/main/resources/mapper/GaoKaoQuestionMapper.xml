@@ -8,7 +8,7 @@
     <select id="findLatestQuestions" resultType="com.sanelee.zhiyuan.Model.GaoKaoQuestion">
         select *
         from gaokao_question
-        order by id DESC
+#         order by id DESC
         limit 0,5
     </select>
 

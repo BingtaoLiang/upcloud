@@ -194,54 +194,52 @@
 <!--                </div>-->
             </div>
         </div>
-        <div class="myitem col-lg-5 col-md-5 col-sm-5 col-xs-5  col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2"
+        <div class="myitem col-lg-8 col-md-8 col-sm-8 col-xs-8  col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2"
              style="height: 600px;-webkit-border-radius: 10px;">
             <div class="page-header">
                 <h2 style="margin-top: -40px">视频课堂 </h2>
             </div>
             <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                <div class="aspect-ratio">
-                    <iframe src="//player.bilibili.com/player.html?aid=456314566&bvid=BV195411Y7M8&cid=210433362&page=1&high_quality=1"
-                            scrolling="no" border="0" frameborder="no" framespacing="0"
-                            allowfullscreen="true"></iframe>
-                </div>
-                <div style="position: relative;left: 50%;margin-top: -15px">
-                    <a href="https://www.bilibili.com/video/BV195411Y7M8?p=1" target="_blank"
-                       th:text="更多2020高考报考热门问题讲解+'&gt;'+'&gt;'+'&gt;'"></a>
-                </div>
 
-                <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="text-align: center;margin-top: 10px">
+                <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="text-align: left;margin-top: -20px">
                     <div class="col-xs-4 col-md-4 col-lg-4 col-sm-4 " th:each="video:${videos.proVideoList}">
-                        <a th:href="@{${video.proweb}}" style="text-decoration: none" th:text="${video.proname}"></a>
+                        <div style="margin-top: 20px;font-size: initial">
+                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+                            <a th:href="@{${video.proweb}}" style="text-decoration: none" th:text="${video.proname}" ></a>
+                        </div>
                     </div>
+<!--                    <div style="position: relative;left: 68%;margin-top: -15px">-->
+<!--                        <a href="https://www.bilibili.com/video/BV195411Y7M8?p=1" target="_blank"-->
+<!--                           th:text="更多2020高考报考热门问题讲解+'&gt;'+'&gt;'+'&gt;'"></a>-->
+<!--                    </div>-->
                     <nav aria-label="Page navigation" style="text-align: center">
                         <ul class="pagination pagination-sm">
                             <li th:if="${videos.showFirstPage}">
-                                <a th:href="@{/front/(page=1)}"
+                                <a th:href="@{/(page=1)}"
                                    aria-label="FirstPage">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
                             <li th:if="${videos.showPrevious}">
-                                <a th:href="@{/front/(page=${videos.page - 1})}"
+                                <a th:href="@{/(page=${videos.page - 1})}"
                                    aria-label="Previous">
                                     <span aria-hidden="true">&lt;</span>
                                 </a>
                             </li>
 
                             <li th:each="page : ${videos.pages}" th:class="${videos.page == page}? 'active' : ''">
-                                <a th:href="@{/front/(page=${page})}"
+                                <a th:href="@{/(page=${page})}"
                                    th:text="${page}"></a>
                             </li>
 
                             <li th:if="${videos.showNext}">
-                                <a th:href="@{/front/(page=${videos.page + 1})}"
+                                <a th:href="@{/(page=${videos.page + 1})}"
                                    aria-label="Next">
                                     <span aria-hidden="true">&gt;</span>
                                 </a>
                             </li>
                             <li th:if="${videos.showEndPage}">
-                                <a th:href="@{/front/(page=${videos.totalPage})}"
+                                <a th:href="@{/(page=${videos.totalPage})}"
                                    aria-label="EndPage">
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
@@ -254,8 +252,8 @@
 
         </div>
 
-        <div class="myitem col-lg-3 col-md-3 col-sm-3 col-xs-3 "
-             style="margin-left: 1%;height: 600px;width: 24%;-webkit-border-radius: 10px;">
+        <div class="myitem col-lg-8 col-md-8 col-sm-8 col-xs-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2"
+             style="height: 600px;-webkit-border-radius: 10px;">
             <div class="page-header">
                 <h2 style="margin-top: -40px">热门问答</h2>
             </div>
@@ -271,22 +269,7 @@
                 <a href="/gaokaoQuestion"
                    th:text="更多热门问答+'&gt;'+'&gt;'+'&gt;'"></a>
             </div>
-            <!--                <form name="demo"  >-->
-            <!--                    <div class="form-group" style="text-align: center;margin-top: 80px">-->
-            <!--                        <div>-->
-            <!--                            <h4>请输入高考分数</h4>-->
-            <!--                        </div>-->
-            <!--                        <div class="input-group">-->
-            <!--                            <span class="input-group-addon" id="basic-addon1">分数</span>-->
-            <!--                            <input type="number" class="form-control" name="score" placeholder="100~750" οninput="if(value>750)value=750;if(value<100)value=100" aria-describedby="basic-addon1">-->
-            <!--                            <span class="input-group-addon">分</span>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                    <div>-->
-            <!--                        <button class="btn btn-default" onclick="query();" style="margin-left: 40%;">查询提交</button>-->
-            <!--                    </div>-->
-            <!--                    &lt;!&ndash;            <button class="btn btn-default" onclick="downloadFile();">数据导出</button>&ndash;&gt;-->
-            <!--                </form>-->
+
         </div>
         <div class="myitem col-lg-8 col-md-8 col-sm-8 col-xs-8  col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2"
              style="height: 500px;-webkit-border-radius: 10px;">
@@ -294,11 +277,15 @@
                 <h2 style="margin-top: -40px">高招动态 </h2>
             </div>
         </div>
+        <div style="background-color: #504b4b; width: 100%;height: 35px;position: absolute;bottom: -1740px;">
+            <h5 style="text-align: center;color: #868686">陕ICP备19023803号</h5>
+        </div>
     </div>
+
 </div>
-<div style="background-color: #504b4b; width: 100%;height: 35px;position: absolute;bottom: -1000px;">
-    <h5 style="text-align: center;color: #868686">陕ICP备19023803号</h5>
-</div>
+<!--<div style="background-color: #504b4b; width: 100%;height: 35px;position: absolute;bottom: -1000px;">-->
+<!--    <h5 style="text-align: center;color: #868686">陕ICP备19023803号</h5>-->
+<!--</div>-->
 
 <script type="text/javascript">
     var index2 = 0;/*初始化一个变量 指向下标*/

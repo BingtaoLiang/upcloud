@@ -25,7 +25,7 @@ public class ProVideoController {
     @GetMapping("/")
     public String getVideoList(Model model,
                                @RequestParam(value = "page", defaultValue = "1") Integer page,
-                               @RequestParam(value = "size", defaultValue = "9") Integer size) {
+                               @RequestParam(value = "size", defaultValue = "30") Integer size) {
 
         PaginationDTO videos = professionService.listProVideo(page, size);
         model.addAttribute("videos",videos);
