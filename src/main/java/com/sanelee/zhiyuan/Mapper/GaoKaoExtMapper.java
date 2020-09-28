@@ -15,9 +15,7 @@ public interface GaoKaoExtMapper {
     List<GaoKao> selectByProname(GaoKaoDTO gaoKaoDTO);
 
     List<GaoKao> searchByScore_Province_Object_Direction(GaoKaoDTO gaoKaoDTO);
-
-
-
+    
     List<GaoKao> selectChongSchoolProfession(int score, Integer sort, String school, String area);
 
     List<GaoKao> selectWenSchoolProfession(int score, Integer sort, String school, String area);
